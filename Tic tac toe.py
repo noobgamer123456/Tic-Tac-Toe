@@ -38,3 +38,65 @@ def game():
         else:
             print("That place is already filled.\nMove to which place?")
             continue
+        
+        if count>=5:
+            if theBoard['7']==theBoard['8']==theBoard['9']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")
+                break
+            elif theBoard['4']==theBoard['5']==theBoard['6']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")
+                break
+            elif theBoard['1']==theBoard['2']==theBoard['3']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")
+                break
+            elif theBoard['1']==theBoard['4']==theBoard['7']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")     #1
+                break
+            elif theBoard['2']==theBoard['5']==theBoard['8']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")  #2
+                break
+            elif theBoard['3']==theBoard['6']==theBoard['9']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")  #3
+                break
+            elif theBoard['7']==theBoard['5']==theBoard['3']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")  #4
+                break
+            elif theBoard['1']==theBoard['5']==theBoard['9']!=' ':
+                printBoard(theBoard)
+                print("\nGame Over.\n")
+                print("****"+turn+"won.****")  #5
+                break
+        if count ==9:
+            print("\Game Over.\n")
+            print("It is a tie!!")
+            
+        if turn == 'X':
+            turn = 'O'
+        else:
+            turn = 'X'
+            
+    restart = input("Do you want to play again?(y/n)")
+    if restart =="y"or restart == "Y":
+        for key in board_keys:
+            theBoard[key]=" "
+            
+        game()
+        
+        
+if __name__ == "__main__":
+    game()
+    
