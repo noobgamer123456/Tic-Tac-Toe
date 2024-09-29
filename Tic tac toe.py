@@ -20,3 +20,21 @@ def printBoard(board):
     print(board['1'] + '|' + board['2'] + '|' + board['3'])
 
     print('-+-+-')
+    
+def game():
+    turn = 'X'
+    count = 0
+    
+    for i in range(10):
+        printBoard(theBoard)
+        print("Its your turn," + turn + "Move to which place?")
+        
+        move = input()
+        
+        if theBoard[move] ==' ':
+            theBoard[move]=turn
+            count = count + 1
+            
+        else:
+            print("That place is already filled.\nMove to which place?")
+            continue
